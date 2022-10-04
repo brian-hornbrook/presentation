@@ -3,6 +3,28 @@ var backgroundColor = document.querySelector('#background-color #black').getAttr
 
 $(document).ready(function () {
 
+    // *** keybard event listener
+    document.addEventListener('keydown', (event) => {
+        if(event.code === 'Escape') {
+            $('section input').css('border', '1px solid lightblue');
+            $('section textarea').css('border', '1px solid lightblue');
+            $('header').css('display', 'block');
+            $('main').css('min-height', '90vh');
+            $('section').css('width', '80%');
+            $('aside').css('display', 'flex');
+        }
+    });
+
+    // *** header ***
+    $('header #play').click(() => {
+        $('section input').css('border', '0');
+        $('section textarea').css('border', '0');
+        $('header').css('display', 'none');
+        $('main').css('min-height', '100vh');
+        $('section').css('width', '100%');
+        $('aside').css('display', 'none');
+    })
+
     // *** background color ***
     $('aside #background-color #white').click(() => {
         $('section').css('background-color', 'white')
